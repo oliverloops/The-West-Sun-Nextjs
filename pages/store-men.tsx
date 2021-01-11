@@ -154,7 +154,9 @@ const Product = () => {
             </span>
             <span className="column">
               <Link href={`/store-men/`}>
-                <Button />
+                <a>
+                  <Button />
+                </a>
               </Link>
             </span>
           </div>

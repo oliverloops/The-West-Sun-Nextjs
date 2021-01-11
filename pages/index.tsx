@@ -7,15 +7,6 @@ import Landing from "../components/Landing";
 import Extra from "../components/Extra";
 import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
-// Exported Views --->
-//Pages
-import Options from "./options";
-import MenStore from "./store-men";
-import WomenStore from "./store-women";
-import MyCart from "./cart";
-import Howto from "./howto";
-import About from "./about";
-// <---
 
 const Main = () => (
   <>
@@ -31,13 +22,6 @@ const Main = () => (
 
 export default () => (
   <>
-    <Metadata />
     <Main />
-    <Options />
-    <MenStore />
-    <WomenStore />
-    <MyCart />
-    <Howto />
-    <About />
   </>
 );

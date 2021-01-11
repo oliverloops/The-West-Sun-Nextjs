@@ -4,12 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Div = styled.div`
-  margin-top: 12%;
+  margin: 12% 10% 0 10%;
+  width: 80%;
 `;
 
 const Img = styled(Image)`
   height: 500px;
-  margin-left: 10%;
+  margin-left: 0;
 
   @media (min-width: 300px) and (max-width: 768px) {
     height: 470px;
@@ -23,8 +24,6 @@ const Img = styled(Image)`
 `;
 
 const Elements = styled.div`
-  margin-left: 4%;
-
   @media (min-width: 769px) and (max-width: 1023px) {
     margin-left: 3%;
     margin-top: -2%;
@@ -120,12 +119,11 @@ const Extra = () => {
 
   return (
     <Div className="columns is-half-desktop">
-      <Div>
-        {/* <Image
-            className="column is-3-desktop is-offset-2-desktop is-4-tablet is-10-mobile is-offset-1-mobile"
-            fluid={element.imagen.fluid}
-            alt="Shoes"
-          /> */}
+      <>
+        <div className="column is-4-desktop is-offset-2-desktop is-4-tablet is-10-mobile is-offset-1-mobile">
+          <Img src={"/2.jpg"} height="500px" width="300px" alt="Shoes" />
+        </div>
+
         <Elements className="column is-8-desktop">
           <Container className="columns is-7-desktop is-4-tablet is-10-mobile is-offset-1-mobile">
             <Title className="column is-12-desktop is-10-tablet is-10-mobile is-offset-1-mobile">
@@ -134,25 +132,31 @@ const Extra = () => {
           </Container>
           <Container className="columns is-3-desktop is-5-tablet">
             <Content className="column is-6-desktop is-8-tablet is-10-mobile is-offset-1-mobile">
-              Una super descripción de prueba
+              Una super descripción de prueba Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Mauris ut luctus velit. Duis lobortis
+              euismod tellus quis commodo.
             </Content>
           </Container>
           <Container className="columns is-3-desktop">
             <Element className="column is-6-desktop is-8-tablet is-10-mobile is-offset-1-mobile">
               <Link href="/brands/">
-                <Underline>Ver Catálogo Completo</Underline>
+                <a>
+                  <Underline>Ver Catálogo Completo</Underline>
+                </a>
               </Link>
             </Element>
           </Container>
           <Container className="columns is-3-desktop">
             <Element className="column is-6-desktop is-8-tablet is-10-mobile is-offset-1-mobile">
               <Link href="/brands/">
-                <Underline>Artículos de Temporada</Underline>
+                <a>
+                  <Underline>Artículos de Temporada</Underline>
+                </a>
               </Link>
             </Element>
           </Container>
         </Elements>
-      </Div>
+      </>
     </Div>
   );
 };

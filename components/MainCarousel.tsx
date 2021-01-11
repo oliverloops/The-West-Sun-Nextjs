@@ -149,7 +149,9 @@ const StyledButton = styled.button`
 const Button = () => {
   return (
     <StyledButton>
-      <Link href="/brands/">Ver Catálogo</Link>
+      <Link href="/brands/">
+        <a>Ver Catálogo</a>
+      </Link>
     </StyledButton>
   );
 };
@@ -231,25 +233,27 @@ const MainCarousel = () => {
                 Una descripción de prueba
               </Text>
               {img ? (
-                <div></div>
+                <Img
+                  className="column is-9-desktop is-10-tablet is-10-mobile
+                 is-offset-1-mobile
+             "
+                  src={"/5.jpg"}
+                  width={800}
+                  height={500}
+                  alt="banner-image"
+                />
               ) : (
-                //   <Image
-                //     className="column is-9-desktop is-10-tablet is-10-mobile
-                //     is-offset-1-mobile
-                // "
-                //     fluid={element.imageMobile.fluid}
-                //     alt="banner-image"
-                //   />
-                //     <Image
-                //       className="column is-9-desktop is-10-tablet is-10-mobile
-                //     is-offset-1-mobile
-                // "
-                //       fluid={element.image.fluid}
-                //       alt="banner-image"
-                //     />
-                <div></div>
+                <Img
+                  className="column is-9-desktop is-10-tablet is-10-mobile
+                    is-offset-1-mobile
+                "
+                  src={"/5.jpg"}
+                  width={800}
+                  height={500}
+                  alt="banner-image"
+                />
               )}
-              {/* <Button className="column main_button is-10-desktop" /> */}
+              <Button className="column main_button is-10-desktop" />
             </Container>
           </li>
         </ul>

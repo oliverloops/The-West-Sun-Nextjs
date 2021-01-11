@@ -118,7 +118,9 @@ const Navbar = (props: unknown) => {
 
           {/* Link -> className="column is-6-desktop is-5-tablet " */}
           <Link href="/">
-            <Img src={"../images/logothewestsun.png"} alt="The West Sun" />
+            <a>
+              <Img src={"/logothewestsun.png"} alt="The West Sun" />
+            </a>
           </Link>
 
           <ListItem className="column is-offset-7-mobile cart-mobile">
@@ -132,16 +134,22 @@ const Navbar = (props: unknown) => {
 
           <Ul className="columns">
             <li className="column">
-              <Link href="/brands/">Tienda</Link>
+              <Link href="/store-men/">
+                <a>Tienda</a>
+              </Link>
             </li>
             <li className="column">
               <a href="#foot">Contácto</a>
             </li>
             <li className="column">
-              <Link href="/about/">Acerca</Link>
+              <Link href="/about/">
+                <a>Acerca</a>
+              </Link>
             </li>
             <li className="column is-4-desktop is-4-tablet">
-              <Link href="/howto/">Como comprar</Link>
+              <Link href="/howto/">
+                <a>Como comprar</a>
+              </Link>
             </li>
             <li className="column cart-desktop">
               <Link href="/cart/">

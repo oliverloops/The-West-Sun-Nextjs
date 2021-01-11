@@ -221,26 +221,28 @@ const Footer = () => {
           <span>Métodos de Pago</span>
           <div className="columns">
             <div className="column is-7-mobile is-offset-3-mobile">
-              <Brand src={"../images/oxxo_logo.png"} alt="oxxo"></Brand>
-              <Brand src={"../images/visa_logo.png"} alt="visa"></Brand>
-              <Brand
-                src={"../images/mastercard_logo.png"}
-                alt="master card"
-              ></Brand>
+              <Brand src="/oxxo_logo.png" alt="oxxo"></Brand>
+              <Brand src="/visa_logo.png" alt="visa"></Brand>
+              <Brand src="/mastercard_logo.png" alt="master card"></Brand>
               <br />
               <Underline>
-                <Link href="/howto/">Cómo comprar</Link>
+                <Link href="/howto/">
+                  <a>Cómo comprar</a>
+                </Link>
               </Underline>
               <br />
               <Underline>
-                <Link href="/"> Política de privacidad</Link>
+                <Link href="/">
+                  <a> Política de privacidad</a>
+                </Link>
               </Underline>
             </div>
           </div>
         </Icons>
       </Foot>
       <Author>
-        Creado por <a href="/">&nbsp;Oliver ALR</a>
+        Creado por{" "}
+        <a href="https://oliverloops-com.vercel.app/">&nbsp;oliverloops</a>
       </Author>
       <Trademark>
         The West Sun© {new Date().getFullYear()} Todos los derechos reservados

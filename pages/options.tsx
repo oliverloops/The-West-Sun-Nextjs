@@ -88,14 +88,16 @@ const Categories = () => {
         <>
           <Box className="column is-4-desktop is-5-tablet is-10-mobile is-offset-1-mobile">
             <Link href="/store-men/">
-              <Title className="column is-4-desktop is-5-tablet is-10-mobile">
-                <span>Calzado </span>para <span>Caballero</span>
-              </Title>
-              <Desc className="column is-4-desktop is-5-tablet is-10-mobile">
-                Suspendisse tempus nibh vel <br />
-                erat lacinia interdum.
-              </Desc>
-              {/* <Img fluid={element.izquierda.fluid} alt="Men Category" /> */}
+              <a>
+                <Title className="column is-4-desktop is-5-tablet is-10-mobile">
+                  <span>Calzado </span>para <span>Caballero</span>
+                </Title>
+                <Desc className="column is-4-desktop is-5-tablet is-10-mobile">
+                  Suspendisse tempus nibh vel <br />
+                  erat lacinia interdum.
+                </Desc>
+                {/* <Img fluid={element.izquierda.fluid} alt="Men Category" /> */}
+              </a>
             </Link>
           </Box>
           <Box
@@ -103,14 +105,16 @@ const Categories = () => {
             className="column is-4-desktop is-5-tablet is-10-mobile is-offset-1-mobile"
           >
             <Link href="/store-women">
-              <Title className="column is-4-desktop is-5-tablet is-10-mobile">
-                <span>Calzado </span>para <span>Dama</span>
-              </Title>
-              <Desc className="column is-4-desktop is-5-tablet is-10-mobile">
-                Suspendisse tempus nibh vel <br />
-                erat lacinia interdum.
-              </Desc>
-              {/* <Image fluid={element.derecha.fluid} alt="Women Category" /> */}
+              <a>
+                <Title className="column is-4-desktop is-5-tablet is-10-mobile">
+                  <span>Calzado </span>para <span>Dama</span>
+                </Title>
+                <Desc className="column is-4-desktop is-5-tablet is-10-mobile">
+                  Suspendisse tempus nibh vel <br />
+                  erat lacinia interdum.
+                </Desc>
+                {/* <Image fluid={element.derecha.fluid} alt="Women Category" /> */}
+              </a>
             </Link>
           </Box>
         </>
