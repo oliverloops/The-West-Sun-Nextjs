@@ -1,0 +1,17 @@
+// Modules
+@import "./components/_stickyheader";
+@import "./layout/_MainCarousel";
+@import "./layout/store";
+@import "./layout/navbar";
+@import "./base/animations";
+
+// Glide Style Modules
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
+@import "~bulma/bulma.sass";
+
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}

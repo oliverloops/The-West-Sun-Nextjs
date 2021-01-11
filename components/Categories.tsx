@@ -1,7 +1,7 @@
-import styled from "styled-components"
-
+import styled from "styled-components";
+import Link from "next/link";
 //Styles
-import "../styles/main.scss"
+import "../styles/main.scss";
 
 const BoxContainer = styled.div`
   margin-top: 10rem;
@@ -11,11 +11,11 @@ const BoxContainer = styled.div`
   @media (min-width: 300px) and (max-width: 768px) {
     margin-top: 15%;
   }
-`
+`;
 
 const Box = styled.div`
   color: #fff;
-`
+`;
 
 const ImgOne = styled(Img)`
   height: 24rem;
@@ -33,7 +33,7 @@ const ImgOne = styled(Img)`
   @media (min-width: 300px) and (max-width: 768px) {
     height: 20rem;
   }
-`
+`;
 
 const ImgTwo = styled(ImgOne)`
   @media (min-width: 769px) {
@@ -45,7 +45,7 @@ const ImgTwo = styled(ImgOne)`
       transition: 0.25s ease-in-out;
     }
   }
-`
+`;
 
 const Title = styled.p`
   color: #fff;
@@ -65,7 +65,7 @@ const Title = styled.p`
   @media (min-width: 300px) and (max-width: 768px) {
     margin-top: 12rem;
   }
-`
+`;
 
 const Desc = styled(Title)`
   font-size: 1rem;
@@ -74,11 +74,11 @@ const Desc = styled(Title)`
   @media (min-width: 300px) and (max-width: 768px) {
     margin-top: 15rem;
   }
-`
+`;
 
 const TextContainer = styled.div`
   justify-content: center;
-`
+`;
 
 const Text = styled.p`
   font-family: "Kameron", serif;
@@ -94,7 +94,7 @@ const Text = styled.p`
   @media (min-width: 769px) and (max-width: 1023px) {
     font-size: 1.6rem;
   }
-`
+`;
 
 const Bar = styled.hr`
   width: 60%;
@@ -108,8 +108,9 @@ const Bar = styled.hr`
     width: 50%;
     margin-left: 25%;
   }
-`
+`;
 
+const Categories = () => {
   return (
     <div>
       <BoxContainer className="columns is-2-offset-desktop is-half-tablet">
@@ -151,7 +152,7 @@ const Bar = styled.hr`
       </TextContainer>
       <Bar />
     </div>
-  )
-}
+  );
+};
 
-export default Categories
+export default Categories;
