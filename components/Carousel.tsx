@@ -63,25 +63,22 @@ const Carousel = () => {
           <div className="glide__track" data-glide-el="track">
             <ul className="glide__slides">
               <li className="glide__slide">
-                <Img src={require("../images/store_one.jpeg")} alt="store_1" />
+                <Img src={"../images/store_one.jpeg"} alt="store_1" />
               </li>
               <li className="glide__slide">
-                <Img src={require("../images/store_two.jpeg")} alt="store_2" />
+                <Img src={"../images/store_two.jpeg"} alt="store_2" />
               </li>
               <li className="glide__slide">
-                <Img
-                  src={require("../images/store_three.jpeg")}
-                  alt="store_3"
-                />
+                <Img src={"../images/store_three.jpeg"} alt="store_3" />
               </li>
               <li className="glide__slide">
-                <Img src={require("../images/store_four.jpeg")} alt="store_4" />
+                <Img src={"../images/store_four.jpeg"} alt="store_4" />
               </li>
               <li className="glide__slide">
-                <Img src={require("../images/store_five.jpeg")} alt="store_5" />
+                <Img src={"../images/store_five.jpeg"} alt="store_5" />
               </li>
               <li className="glide__slide">
-                <Img src={require("../images/store_six.jpeg")} alt="store_6" />
+                <Img src={"../images/store_six.jpeg"} alt="store_6" />
               </li>
             </ul>
           </div>

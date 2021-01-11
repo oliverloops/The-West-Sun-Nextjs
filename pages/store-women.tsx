@@ -177,14 +177,12 @@ const Store = () => (
 
 // Main Component
 const WomenStore = () => (
-  //   <Provider store={store}>
   <>
     <Metadata />
     <Navbar />
     <Store />
     <Footer />
   </>
-  //   </Provider>
 );
 
 export default WomenStore;

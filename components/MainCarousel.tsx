@@ -192,7 +192,7 @@ const MainCarousel = () => {
     glideOne.mount();
   }, [img, setImg]);
 
-  window.addEventListener("resize", resize);
+  // window.addEventListener("resize", resize);
 
   // const data = useStaticQuery(graphql`
   //   query CarruselQuery {
@@ -231,7 +231,7 @@ const MainCarousel = () => {
                 Una descripción de prueba
               </Text>
               {img ? (
-                <></>
+                <div></div>
               ) : (
                 //   <Image
                 //     className="column is-9-desktop is-10-tablet is-10-mobile
@@ -247,7 +247,7 @@ const MainCarousel = () => {
                 //       fluid={element.image.fluid}
                 //       alt="banner-image"
                 //     />
-                <></>
+                <div></div>
               )}
               {/* <Button className="column main_button is-10-desktop" /> */}
             </Container>

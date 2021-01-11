@@ -297,7 +297,7 @@ const Cart = () => {
               height: "6.5rem",
               width: "10.5rem",
             }}
-            src={require("../images/shoes_3.jpeg")}
+            src={"../images/shoes_3.jpeg"}
             alt="item"
           />
         </span>
@@ -345,7 +345,7 @@ const Cart = () => {
               height: "6.5rem",
               width: "10.5rem",
             }}
-            src={require("../images/shoes_7.jpeg")}
+            src={"../images/shoes_7.jpeg"}
             alt="item"
           />
         </span>
@@ -520,14 +520,12 @@ const Cart = () => {
 
 const MyCart = () => {
   return (
-    // <Provider store={store}>
     <>
       <Metadata />
       <Navbar />
       <Cart />
       <Footer />
     </>
-    // </Provider>
   );
 };
 

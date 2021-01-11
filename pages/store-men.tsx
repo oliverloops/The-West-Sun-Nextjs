@@ -174,14 +174,12 @@ const Store = () => (
 
 // Main Component
 const MenStore = () => (
-  // <Provider store={store}>
   <>
     <Metadata />
     <Navbar />
     <Store />
     <Footer />
   </>
-  // </Provider>
 );
 
 export default MenStore;

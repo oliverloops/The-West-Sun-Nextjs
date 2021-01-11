@@ -221,16 +221,10 @@ const Footer = () => {
           <span>Métodos de Pago</span>
           <div className="columns">
             <div className="column is-7-mobile is-offset-3-mobile">
+              <Brand src={"../images/oxxo_logo.png"} alt="oxxo"></Brand>
+              <Brand src={"../images/visa_logo.png"} alt="visa"></Brand>
               <Brand
-                src={require("../images/oxxo_logo.png")}
-                alt="oxxo"
-              ></Brand>
-              <Brand
-                src={require("../images/visa_logo.png")}
-                alt="visa"
-              ></Brand>
-              <Brand
-                src={require("../images/mastercard_logo.png")}
+                src={"../images/mastercard_logo.png"}
                 alt="master card"
               ></Brand>
               <br />

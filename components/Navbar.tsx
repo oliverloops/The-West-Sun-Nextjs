@@ -2,9 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
-//Styles
-import "../styles/main.scss";
+import Link from "next/link";
 
 const Container = styled.div`
   background-color: #000;
@@ -100,14 +98,16 @@ const Ul = styled.ul`
     font-family: "Kameron", serif;
     animation: links 900ms cubic-bezier(0.54, 0.87, 1, 0.78);
   }
+
+  @media (min-width: 769px) and (max-width: 1023px) {
+    font-size: 0.25em;
+  }
 `;
 
-const Navbar = (props) => {
-  console.log(props);
-
-  useEffect(() => {
-    getNumbers();
-  }, []);
+const Navbar = (props: unknown) => {
+  // useEffect(() => {
+  //   getNumbers();
+  // }, []);
 
   return (
     <>
@@ -116,46 +116,37 @@ const Navbar = (props) => {
           <input type="checkbox" id="button" />
           <label htmlFor="button"></label>
 
-          <Link to="/" className="column is-6-desktop is-5-tablet ">
-            <Img
-              src={require("../images/logothewestsun.png")}
-              alt="The West Sun"
-            />
+          {/* Link -> className="column is-6-desktop is-5-tablet " */}
+          <Link href="/">
+            <Img src={"../images/logothewestsun.png"} alt="The West Sun" />
           </Link>
 
           <ListItem className="column is-offset-7-mobile cart-mobile">
             <span className="icon">
-              <Link to="/cart/">
+              <Link href="/cart/">
                 <i className="fas fa-shopping-cart fas"></i>
               </Link>
             </span>
-            <span> {props.cartProps.cartElements}</span>
+            {/* <span> {props.cartProps.cartElements}</span> */}
           </ListItem>
 
-          <Ul
-            className="columns"
-            css={`
-              @media (min-width: 769px) and (max-width: 1023px) {
-                font-size: 0.25em;
-              }
-            `}
-          >
+          <Ul className="columns">
             <li className="column">
-              <Link to="/brands/">Tienda</Link>
+              <Link href="/brands/">Tienda</Link>
             </li>
             <li className="column">
               <a href="#foot">Contácto</a>
             </li>
             <li className="column">
-              <Link to="/about/">Acerca</Link>
+              <Link href="/about/">Acerca</Link>
             </li>
             <li className="column is-4-desktop is-4-tablet">
-              <Link to="/howto/">Como comprar</Link>
+              <Link href="/howto/">Como comprar</Link>
             </li>
             <li className="column cart-desktop">
-              <Link to="/cart/">
+              <Link href="/cart/">
                 <i className="fas fa-shopping-cart fas"></i>
-                <span> {props.cartProps.cartElements}</span>
+                {/* <span> {props.cartProps.cartElements}</span> */}
               </Link>
             </li>
           </Ul>
@@ -165,8 +156,4 @@ const Navbar = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  cartProps: state.cartState,
-});
-
-export default connect(mapStateToProps, { getNumbers })(Navbar);
+export default Navbar;

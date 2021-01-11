@@ -30,7 +30,6 @@ const Main = () => (
 );
 
 export default () => (
-  // <Provider store={store}>
   <>
     <Metadata />
     <Main />
@@ -41,5 +40,4 @@ export default () => (
     <Howto />
     <About />
   </>
-  // </Provider>
 );

@@ -73,7 +73,7 @@ const Landing = () => {
       </Div>
       <Icons className="columns is-6-desktop">
         <Fig className="column is-2">
-          <Img src={require("../images/shoe_icon.png")} alt="iconOne" />
+          <Img src={"../images/shoe_icon.png"} alt="iconOne" />
           <Figcap>
             Modelos <br />
             íncreibles que
@@ -82,20 +82,20 @@ const Landing = () => {
           </Figcap>
         </Fig>
         <Fig className="column is-2-desktop is-3-tablet">
-          <Img src={require("../images/order_icon.png")} alt="iconTwo" />
+          <Img src={"../images/order_icon.png"} alt="iconTwo" />
           <Figcap>
             Contamos con <br /> disponibilidad <br />
             para envíos
           </Figcap>
         </Fig>
         <Fig className="column is-2-desktop is-3-tablet">
-          <Img src={require("../images/quality.png")} alt="iconThree" />
+          <Img src={"../images/quality.png"} alt="iconThree" />
           <Figcap>
             Usamos <br /> materiales de la <br /> mejor calidad
           </Figcap>
         </Fig>
         <Fig className="column is-2">
-          <Img src={require("../images/mexico_icon.png")} alt="iconFour" />
+          <Img src={"../images/mexico_icon.png"} alt="iconFour" />
           <Figcap>
             Hechos <br /> completamente <br />
             en México

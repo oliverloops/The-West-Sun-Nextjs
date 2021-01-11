@@ -121,14 +121,12 @@ const Categories = () => {
 
 const Options = () => {
   return (
-    // <Provider store={store}>
     <div>
       <Metadata />
       <Navbar />
       <Categories />
       <Footer />
     </div>
-    // </Provider>
   );
 };
 

@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 // Layout
 import Metadata from "../components/Metadata";
@@ -55,7 +54,7 @@ const View = () => {
           className="column is-half-desktop is-offset-one-quarter-desktop
             is-8-tablet is-offset-2-tablet is-10-mobile is-offset-1-mobile
           "
-          src={require("../images/ss_1.png")}
+          src={"../images/ss_1.png"}
           alt="tutorial"
         />
       </div>
@@ -82,7 +81,7 @@ const View = () => {
           className="column is-half-desktop is-offset-one-quarter-desktop
             is-8-tablet is-offset-2-tablet is-10-mobile is-offset-1-mobile
           "
-          src={require("../images/ss_2.png")}
+          src={"../images/ss_2.png"}
           alt="tutorial"
         />
       </div>
@@ -109,7 +108,7 @@ const View = () => {
           className="column is-half-desktop is-offset-one-quarter-desktop
             is-8-tablet is-offset-2-tablet is-10-mobile is-offset-1-mobile
           "
-          src={require("../images/ss_3.png")}
+          src={"../images/ss_3.png"}
           alt="tutorial"
         />
       </div>
@@ -136,7 +135,7 @@ const View = () => {
           className="column is-half-desktop is-offset-one-quarter-desktop
             is-8-tablet is-offset-2-tablet is-10-mobile is-offset-1-mobile
           "
-          src={require("../images/ss_4.png")}
+          src={"../images/ss_4.png"}
           alt="tutorial"
         />
       </div>
@@ -146,14 +145,12 @@ const View = () => {
 
 const Howto = () => {
   return (
-    // <Provider store={store}>
     <>
       <Metadata />
       <Navbar />
       <View />
       <Footer />
     </>
-    // </Provider>
   );
 };
 

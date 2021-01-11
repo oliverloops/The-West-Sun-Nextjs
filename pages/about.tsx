@@ -106,7 +106,7 @@ const View = () => {
           className="column is-half-desktop is-offset-one-quarter-desktop
             is-8-tablet is-offset-2-tablet is-10-mobile is-offset-1-mobile
           "
-          src={require("../images/ss_1.png")}
+          src={"../images/ss_1.png"}
           alt="tutorial"
         />
       </div>
@@ -116,14 +116,12 @@ const View = () => {
 
 const About = () => {
   return (
-    // <Provider store={store}>
     <>
       <Metadata />
       <Navbar />
       <View />
       <Footer />
     </>
-    // </Provider>
   );
 };
 

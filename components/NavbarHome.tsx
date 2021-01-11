@@ -23,12 +23,10 @@ const Bar = styled.div`
 
 const NavbarHome = () => {
   return (
-    // <Provider store={store}>
     <>
       <Navbar />
       <Bar />
     </>
-    // </Provider>
   );
 };
 
