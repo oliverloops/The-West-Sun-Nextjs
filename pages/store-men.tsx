@@ -3,6 +3,9 @@ import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
 
+import products from "../data/products.json";
+import { useShoppingCart, formatCurrencyString } from "use-shopping-cart";
+
 // Components
 import Metadata from "../components/Metadata";
 import Navbar from "../components/Navbar";
@@ -145,7 +148,7 @@ const Product = () => {
   return (
     <Container className="my-flex">
       <Element className="item column is-3-widescreen is-3-desktop is-3-tablet is-10-mobile is-offset-1-mobile">
-        {/* <Image fluid={product.image.fluid} alt="producto" /> */}
+        <Img src={"/shoes_4.jpeg"} width="380" height="250" alt="producto" />
         <div className="product-meta-info">
           <div className="columns is-desktop is-tablet is-mobile">
             <span className="column is-7-widescreen is-6-desktop is-7-tablet is-7-mobile">

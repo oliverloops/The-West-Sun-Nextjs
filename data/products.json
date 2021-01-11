@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Zapatos de Vestir Cafe",
+    "description": "Unos zapatos bien cafes",
+    "sku": "sku_GBJ2Ep8246qeeT",
+    "price": 600,
+    "image": "/shoes_4.jpeg",
+    "currency": "USD"
+  },
+  {
+    "name": "Otros para caballero",
+    "sku": "sku_GBJ2WWfMaGNC2Z",
+    "price": 800,
+    "image": "/shoes_4.jpeg",
+    "currency": "USD"
+  }
+]
