@@ -3,6 +3,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import Link from "next/link";
+import { HiShoppingCart } from "react-icons/hi";
 
 const Container = styled.div`
   background-color: #000;
@@ -28,8 +29,8 @@ const Container = styled.div`
 const Img = styled.img`
   width: 180px;
   height: 80px;
-  margin-left: 1rem;
-  margin-top: 8px;
+  margin-left: 2rem;
+  margin-top: 14px;
   cursor: pointer;
   animation: logo 1.25s linear;
 
@@ -104,6 +105,15 @@ const Ul = styled.ul`
   }
 `;
 
+const ShoppingCart = styled(HiShoppingCart)`
+  color: #fff;
+
+  &:hover {
+    color: rgb(142, 45, 34);
+    transition: 0.25s linear;
+  }
+`;
+
 const Navbar = (props: unknown) => {
   // useEffect(() => {
   //   getNumbers();
@@ -116,10 +126,15 @@ const Navbar = (props: unknown) => {
           <input type="checkbox" id="button" />
           <label htmlFor="button"></label>
 
-          {/* Link -> className="column is-6-desktop is-5-tablet " */}
+          {/* Link ->   className="column is-6-desktop is-5-tablet "*/}
+
           <Link href="/">
             <a>
-              <Img src={"/logothewestsun.png"} alt="The West Sun" />
+              <Img
+                style={{ padding: "0, 6rem, 0, 3rem" }}
+                src={"/logothewestsun.png"}
+                alt="The West Sun"
+              />
             </a>
           </Link>
 
@@ -133,27 +148,27 @@ const Navbar = (props: unknown) => {
           </ListItem>
 
           <Ul className="columns">
-            <li className="column">
+            <li className="column is-2-desktop">
               <Link href="/store-men/">
                 <a>Tienda</a>
               </Link>
             </li>
-            <li className="column">
+            <li className="column is-2-desktop">
               <a href="#foot">Contácto</a>
             </li>
-            <li className="column">
+            <li className="column is-2-desktop">
               <Link href="/about/">
                 <a>Acerca</a>
               </Link>
             </li>
-            <li className="column is-4-desktop is-4-tablet">
+            <li className="column is-2-desktop is-4-tablet">
               <Link href="/howto/">
                 <a>Como comprar</a>
               </Link>
             </li>
             <li className="column cart-desktop">
               <Link href="/cart/">
-                <i className="fas fa-shopping-cart fas"></i>
+                <ShoppingCart style={{ fontSize: "2rem", cursor: "pointer" }} />
                 {/* <span> {props.cartProps.cartElements}</span> */}
               </Link>
             </li>
