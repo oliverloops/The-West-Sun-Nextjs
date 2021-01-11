@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import Link from "next/link";
 import Glide from "@glidejs/glide";
-import Img from "gatsby-image";
-//Styles
-import "../styles/main.scss";
+import Image from "next/image";
 
 const Container = styled.div`
   margin-top: 1.95rem; /*31.2px*/
@@ -12,7 +10,7 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Image = styled(Img)`
+const Img = styled(Image)`
   height: 515px;
   justify-content: center;
   filter: brightness(75%);
@@ -151,14 +149,14 @@ const StyledButton = styled.button`
 const Button = () => {
   return (
     <StyledButton>
-      <Link to="/brands/">Ver Catálogo</Link>
+      <Link href="/brands/">Ver Catálogo</Link>
     </StyledButton>
   );
 };
 
 //Main component
 const MainCarousel = () => {
-  const [img, setImg] = useState();
+  const [img, setImg] = useState(Boolean);
 
   function resize() {
     if (window.innerWidth < 769) {
@@ -196,64 +194,64 @@ const MainCarousel = () => {
 
   window.addEventListener("resize", resize);
 
-  const data = useStaticQuery(graphql`
-    query CarruselQuery {
-      carrusel: allDatoCmsCarrusel {
-        edges {
-          node {
-            id
-            titulo
-            descripcion
-            image {
-              fluid {
-                ...GatsbyDatoCmsFluid
-              }
-            }
-            imageMobile {
-              fluid {
-                ...GatsbyDatoCmsFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+  // const data = useStaticQuery(graphql`
+  //   query CarruselQuery {
+  //     carrusel: allDatoCmsCarrusel {
+  //       edges {
+  //         node {
+  //           id
+  //           titulo
+  //           descripcion
+  //           image {
+  //             fluid {
+  //               ...GatsbyDatoCmsFluid
+  //             }
+  //           }
+  //           imageMobile {
+  //             fluid {
+  //               ...GatsbyDatoCmsFluid
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
 
   return (
     <div className="glide-1">
       <div className="glide__track" data-glide-el="track">
         <ul className="glide__slides">
-          {data.carrusel.edges.map(({ node: element }) => (
-            <li key={element.id} className="glide__slide">
-              <Container className="columns is-desktop">
-                <Title className="column is-4-mobile is-offset-0-mobile main_title">
-                  {element.titulo}
-                </Title>
-                <Text className="column is-2-desktop is-offset-0-desktop is-2-tablet is-offset-1-tablet is-4-mobile is-offset-0-mobile main_desc">
-                  {element.descripcion}
-                </Text>
-                {img ? (
-                  <Image
-                    className="column is-9-desktop is-10-tablet is-10-mobile
-                    is-offset-1-mobile
-                "
-                    fluid={element.imageMobile.fluid}
-                    alt="banner-image"
-                  />
-                ) : (
-                  <Image
-                    className="column is-9-desktop is-10-tablet is-10-mobile
-                  is-offset-1-mobile
-              "
-                    fluid={element.image.fluid}
-                    alt="banner-image"
-                  />
-                )}
-                <Button className="column main_button is-10-desktop" />
-              </Container>
-            </li>
-          ))}
+          <li className="glide__slide">
+            <Container className="columns is-desktop">
+              <Title className="column is-4-mobile is-offset-0-mobile main_title">
+                Otro título de prueba
+              </Title>
+              <Text className="column is-2-desktop is-offset-0-desktop is-2-tablet is-offset-1-tablet is-4-mobile is-offset-0-mobile main_desc">
+                Una descripción de prueba
+              </Text>
+              {img ? (
+                <></>
+              ) : (
+                //   <Image
+                //     className="column is-9-desktop is-10-tablet is-10-mobile
+                //     is-offset-1-mobile
+                // "
+                //     fluid={element.imageMobile.fluid}
+                //     alt="banner-image"
+                //   />
+                //     <Image
+                //       className="column is-9-desktop is-10-tablet is-10-mobile
+                //     is-offset-1-mobile
+                // "
+                //       fluid={element.image.fluid}
+                //       alt="banner-image"
+                //     />
+                <></>
+              )}
+              {/* <Button className="column main_button is-10-desktop" /> */}
+            </Container>
+          </li>
         </ul>
       </div>
     </div>

@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
-
-//Styles
-import "../styles/main.scss";
 // Components
-import Metadata from "../components/Metadata.jsx";
-import Navbar from "../components/Navbar.jsx";
-import Footer from "../components/Footer.jsx";
+import Metadata from "../components/Metadata";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 //Begin of new relocated styles
 const H1 = styled.h1`

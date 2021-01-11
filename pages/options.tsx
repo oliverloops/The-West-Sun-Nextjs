@@ -1,13 +1,10 @@
 import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
-
-//Styles
-import "../styles/main.scss";
 // UI Components
-import Metadata from "../components/Metadata.jsx";
-import Footer from "../components/Footer.jsx";
-import Navbar from "../components/Navbar.jsx";
+import Metadata from "../components/Metadata";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const Category = styled.h1`
   color: rgb(142, 45, 34);
@@ -79,8 +76,8 @@ const Desc = styled(Title)`
   }
 `;
 
-const Categories = ({ data }) => {
-  const elements = data.categorias;
+const Categories = () => {
+  //const elements = data.categorias;
 
   return (
     <>
@@ -88,49 +85,47 @@ const Categories = ({ data }) => {
         Selecciona una Categoría
       </Category>
       <BoxContainer className="columns is-2-offset-desktop is-half-tablet">
-        {elements.edges.map(({ node: element }) => (
-          <>
-            <Box className="column is-4-desktop is-5-tablet is-10-mobile is-offset-1-mobile">
-              <Link to="/store-men/">
-                <Title className="column is-4-desktop is-5-tablet is-10-mobile">
-                  <span>Calzado </span>para <span>Caballero</span>
-                </Title>
-                <Desc className="column is-4-desktop is-5-tablet is-10-mobile">
-                  Suspendisse tempus nibh vel <br />
-                  erat lacinia interdum.
-                </Desc>
-                <Img fluid={element.izquierda.fluid} alt="Men Category" />
-              </Link>
-            </Box>
-            <Box
-              href="/store.html"
-              className="column is-4-desktop is-5-tablet is-10-mobile is-offset-1-mobile"
-            >
-              <Link to="/store-women/">
-                <Title className="column is-4-desktop is-5-tablet is-10-mobile">
-                  <span>Calzado </span>para <span>Dama</span>
-                </Title>
-                <Desc className="column is-4-desktop is-5-tablet is-10-mobile">
-                  Suspendisse tempus nibh vel <br />
-                  erat lacinia interdum.
-                </Desc>
-                <Image fluid={element.derecha.fluid} alt="Women Category" />
-              </Link>
-            </Box>
-          </>
-        ))}
+        <>
+          <Box className="column is-4-desktop is-5-tablet is-10-mobile is-offset-1-mobile">
+            <Link href="/store-men/">
+              <Title className="column is-4-desktop is-5-tablet is-10-mobile">
+                <span>Calzado </span>para <span>Caballero</span>
+              </Title>
+              <Desc className="column is-4-desktop is-5-tablet is-10-mobile">
+                Suspendisse tempus nibh vel <br />
+                erat lacinia interdum.
+              </Desc>
+              {/* <Img fluid={element.izquierda.fluid} alt="Men Category" /> */}
+            </Link>
+          </Box>
+          <Box
+            href="/store.html"
+            className="column is-4-desktop is-5-tablet is-10-mobile is-offset-1-mobile"
+          >
+            <Link href="/store-women">
+              <Title className="column is-4-desktop is-5-tablet is-10-mobile">
+                <span>Calzado </span>para <span>Dama</span>
+              </Title>
+              <Desc className="column is-4-desktop is-5-tablet is-10-mobile">
+                Suspendisse tempus nibh vel <br />
+                erat lacinia interdum.
+              </Desc>
+              {/* <Image fluid={element.derecha.fluid} alt="Women Category" /> */}
+            </Link>
+          </Box>
+        </>
       </BoxContainer>
     </>
   );
 };
 
-const Options = ({ data }) => {
+const Options = () => {
   return (
     // <Provider store={store}>
     <div>
       <Metadata />
       <Navbar />
-      <Categories data={data} />
+      <Categories />
       <Footer />
     </div>
     // </Provider>

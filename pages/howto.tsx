@@ -1,12 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-
-//Styles
-import "../styles/main.scss";
 // Layout
-import Metadata from "../components/Metadata.jsx";
-import Navbar from "../components/Navbar.jsx";
-import Footer from "../components/Footer.jsx";
+import Metadata from "../components/Metadata";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Image = styled.img`
   height: 22rem;

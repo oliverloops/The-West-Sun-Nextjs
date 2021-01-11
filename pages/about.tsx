@@ -1,15 +1,10 @@
-import React from "react";
 import styled from "styled-components";
-//Redux
-import store from "../store";
-import { Provider } from "react-redux";
-//Styles
-import "../styles/main.scss";
+
 // Layout
-import Metadata from "../components/Metadata.jsx";
-import Navbar from "../components/Navbar.jsx";
-import Footer from "../components/Footer.jsx";
-import video from "../video/shoes_video.mp4";
+import Metadata from "../components/Metadata";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+//import video from "../video/shoes_video.mp4";
 
 const Image = styled.img`
   height: 22rem;
@@ -34,12 +29,12 @@ const Video = () => {
         width="550"
         height="300"
         data-setup="{}"
-        css={`
-          margin-top: 2rem;
-          justify-content: center;
-        `}
+        style={{
+          marginTop: "2rem",
+          justifyContent: "center",
+        }}
       >
-        <source src={video} type="video/mp4" />
+        {/* <source src={video} type="video/mp4" /> */}
         <p className="vjs-no-js">
           Por favor habilite JavaScript en su navegador para visualizar este
           video.
@@ -51,18 +46,18 @@ const Video = () => {
 
 const View = () => {
   return (
-    <React.Fragment>
+    <>
       <div className="columns">
         <h1
           className="column"
-          css={`
-            text-align: center;
-            color: #8e2d22;
-            font-family: "Kameron", serif;
-            font-weight: 800;
-            font-size: 1.85rem;
-            margin-top: 8rem;
-          `}
+          style={{
+            textAlign: "center",
+            color: "#8e2d22",
+            fontFamily: "Kameron, serif",
+            fontWeight: "bold",
+            fontSize: "1.85rem",
+            marginTop: "8rem",
+          }}
         >
           Nuestros Procesos de Creación
         </h1>
@@ -72,14 +67,14 @@ const View = () => {
           className="column is-10-desktop is-offset-1-desktop
             is-10-tablet is-offset-1-tablet
           "
-          css={`
-            text-align: center;
-            color: rgb(42, 72, 137);
-            font-family: "Kameron", serif;
-            font-weight: 800;
-            font-size: 1.15rem;
-            margin-top: 1.65rem;
-          `}
+          style={{
+            textAlign: "center",
+            color: "rgb(42, 72, 137)",
+            fontFamily: "Kameron, serif",
+            fontWeight: "bold",
+            fontSize: "1.15rem",
+            marginTop: "1.65rem",
+          }}
         >
           * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
           purus vitae eros dictum facilisis ut nec mi Nam.
@@ -93,14 +88,14 @@ const View = () => {
           className="column is-10-desktop is-offset-1-desktop
             is-10-tablet is-offset-1-tablet
           "
-          css={`
-            text-align: center;
-            color: rgb(42, 72, 137);
-            font-family: "Kameron", serif;
-            font-weight: 800;
-            font-size: 1.15rem;
-            margin-top: 1.65rem;
-          `}
+          style={{
+            textAlign: "center",
+            color: "rgb(42, 72, 137)",
+            fontFamily: "Kameron, serif",
+            fontWeight: "bold",
+            fontSize: "1.15rem",
+            marginTop: "1.65rem",
+          }}
         >
           * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
           purus vitae eros dictum facilisis ut nec mi Nam.
@@ -115,18 +110,20 @@ const View = () => {
           alt="tutorial"
         />
       </div>
-    </React.Fragment>
+    </>
   );
 };
 
 const About = () => {
   return (
-    <Provider store={store}>
+    // <Provider store={store}>
+    <>
       <Metadata />
       <Navbar />
       <View />
       <Footer />
-    </Provider>
+    </>
+    // </Provider>
   );
 };
 

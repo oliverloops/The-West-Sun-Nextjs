@@ -1,8 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import Link from "next/link";
-//Styles
-import "../styles/main.scss";
 
 const Div = styled.div`
   border-top: solid rgb(221, 221, 221) 1px;
@@ -237,11 +235,11 @@ const Footer = () => {
               ></Brand>
               <br />
               <Underline>
-                <Link to="/howto/">Cómo comprar</Link>
+                <Link href="/howto/">Cómo comprar</Link>
               </Underline>
               <br />
               <Underline>
-                <Link to="/"> Política de privacidad</Link>
+                <Link href="/"> Política de privacidad</Link>
               </Underline>
             </div>
           </div>

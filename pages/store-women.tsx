@@ -2,11 +2,10 @@ import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
 
-import "../styles/main.scss";
 // Components
-import Metadata from "../components/Metadata.jsx";
-import Navbar from "../components/Navbar.jsx";
-import Footer from "../components/Footer.jsx";
+import Metadata from "../components/Metadata";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Container = styled.div`
   margin-top: 10%;
@@ -113,70 +112,67 @@ const StyledButton = styled.button`
   }
 `;
 
+const AcoolDiv = styled.div`
+  @media (min-width: 250px) and (max-width: 768px) {
+    margin-top: 10%;
+  }
+`;
+
 const Button = () => <StyledButton>Ver Producto</StyledButton>;
 
 const Product = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      productos: allDatoCmsProductoDama {
-        edges {
-          node {
-            id
-            slug
-            title
-            price
-            image {
-              fluid {
-                ...GatsbyDatoCmsFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+  //   const data = useStaticQuery(graphql`
+  //     query {
+  //       productos: allDatoCmsProductoDama {
+  //         edges {
+  //           node {
+  //             id
+  //             slug
+  //             title
+  //             price
+  //             image {
+  //               fluid {
+  //                 ...GatsbyDatoCmsFluid
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   `);
 
   return (
     <Container className="my-flex">
-      {data.productos.edges.map(({ node: product }) => (
-        <Element
-          key={product.id}
-          className="item column is-3-widescreen is-3-desktop is-3-tablet is-10-mobile is-offset-1-mobile"
-        >
-          <Image fluid={product.image.fluid} alt="producto" />
-          <div className="product-meta-info">
-            <div className="columns is-desktop is-tablet is-mobile">
-              <span className="column is-7-widescreen is-6-desktop is-7-tablet is-7-mobile">
-                <Caption>{product.title}</Caption>
-                <Price>$ {product.price} MXN.</Price>
-              </span>
-              <span className="column">
-                <Link to={`/store-women/${product.slug}`}>
-                  <Button />
-                </Link>
-              </span>
-            </div>
+      <Element
+        //   key={product.id}
+        className="item column is-3-widescreen is-3-desktop is-3-tablet is-10-mobile is-offset-1-mobile"
+      >
+        {/* <Image fluid={product.image.fluid} alt="producto" /> */}
+        <div className="product-meta-info">
+          <div className="columns is-desktop is-tablet is-mobile">
+            <span className="column is-7-widescreen is-6-desktop is-7-tablet is-7-mobile">
+              <Caption>Este es un título de prueba</Caption>
+              <Price>$ 200 MXN.</Price>
+            </span>
+            <span className="column">
+              {/* <Link href={`/store-women/${product.slug}`}> */}
+              <Button />
+              {/* </Link> */}
+            </span>
           </div>
-        </Element>
-      ))}
+        </div>
+      </Element>
     </Container>
   );
 };
 
 //Articles listing component
 const Store = () => (
-  <div
-    className="columns"
-    css={`
-      @media (min-width: 250px) and (max-width: 768px) {
-        margin-top: 10%;
-      }
-    `}
-  >
+  <AcoolDiv className="columns">
     <div className="column is-12-desktop is-offset-1-desktop">
       <Product />
     </div>
-  </div>
+  </AcoolDiv>
 );
 
 // Main Component

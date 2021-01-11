@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Navbar from "./Navbar.jsx";
-
-//Styles
-import "../styles/main.scss";
+import Navbar from "./Navbar";
 
 const Bar = styled.div`
   background-image: linear-gradient(

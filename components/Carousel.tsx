@@ -1,6 +1,4 @@
 import styled from "styled-components";
-//Styles
-import "../styles/main.scss";
 
 const Title = styled.h1`
   color: rgb(142, 45, 34);

@@ -1,6 +1,4 @@
 import styled from "styled-components";
-//Styles
-import "../styles/main.scss";
 
 const Div = styled.div`
   margin-top: 10%;

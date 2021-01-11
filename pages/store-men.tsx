@@ -1,16 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
-//Redux
-import store from "../store";
-import { Provider } from "react-redux";
-//Styles
-import "../styles/main.scss";
+import Link from "next/link";
+import Image from "next/image";
+
 // Components
-import Metadata from "../components/Metadata.jsx";
-import Navbar from "../components/Navbar.jsx";
-import Footer from "../components/Footer.jsx";
+import Metadata from "../components/Metadata";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Container = styled.div`
   margin-top: 10%;
@@ -22,7 +18,7 @@ const Element = styled.figure`
   }
 `;
 
-const Image = styled(Img)`
+const Img = styled(Image)`
   height: 205px;
 
   @media (min-width: 300px) and (max-width: 768px) {
@@ -117,79 +113,75 @@ const StyledButton = styled.button`
   }
 `;
 
+const Adiv = styled.div`
+  @media (min-width: 250px) and (max-width: 768px) {
+    margin-top: 10%;
+  }
+`;
+
 const Button = () => <StyledButton>Ver Producto</StyledButton>;
 
 const Product = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      productos: allDatoCmsProductoCaballero {
-        edges {
-          node {
-            id
-            slug
-            title
-            price
-            image {
-              fluid {
-                ...GatsbyDatoCmsFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     productos: allDatoCmsProductoCaballero {
+  //       edges {
+  //         node {
+  //           id
+  //           slug
+  //           title
+  //           price
+  //           image {
+  //             fluid {
+  //               ...GatsbyDatoCmsFluid
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
 
   return (
     <Container className="my-flex">
-      {data.productos.edges.map(({ node: product }) => (
-        <Element
-          key={product.id}
-          className="item column is-3-widescreen is-3-desktop is-3-tablet is-10-mobile is-offset-1-mobile"
-        >
-          <Image fluid={product.image.fluid} alt="producto" />
-          <div className="product-meta-info">
-            <div className="columns is-desktop is-tablet is-mobile">
-              <span className="column is-7-widescreen is-6-desktop is-7-tablet is-7-mobile">
-                <Caption>{product.title}</Caption>
-                <Price>$ {product.price} MXN.</Price>
-              </span>
-              <span className="column">
-                <Link to={`/store-men/${product.slug}`}>
-                  <Button />
-                </Link>
-              </span>
-            </div>
+      <Element className="item column is-3-widescreen is-3-desktop is-3-tablet is-10-mobile is-offset-1-mobile">
+        {/* <Image fluid={product.image.fluid} alt="producto" /> */}
+        <div className="product-meta-info">
+          <div className="columns is-desktop is-tablet is-mobile">
+            <span className="column is-7-widescreen is-6-desktop is-7-tablet is-7-mobile">
+              <Caption>Un título de prueba</Caption>
+              <Price>$ 300 MXN.</Price>
+            </span>
+            <span className="column">
+              <Link href={`/store-men/`}>
+                <Button />
+              </Link>
+            </span>
           </div>
-        </Element>
-      ))}
+        </div>
+      </Element>
     </Container>
   );
 };
 
 const Store = () => (
-  <div
-    className="columns"
-    css={`
-      @media (min-width: 250px) and (max-width: 768px) {
-        margin-top: 10%;
-      }
-    `}
-  >
+  <Adiv className="columns">
     <div className="column is-12-desktop is-offset-1-desktop">
       <Product />
     </div>
-  </div>
+  </Adiv>
 );
 
 // Main Component
 const MenStore = () => (
-  <Provider store={store}>
+  // <Provider store={store}>
+  <>
     <Metadata />
     <Navbar />
     <Store />
     <Footer />
-  </Provider>
+  </>
+  // </Provider>
 );
 
 export default MenStore;

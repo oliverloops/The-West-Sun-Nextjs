@@ -1,15 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, graphql, useStaticQuery } from "gatsby";
-import Img from "gatsby-image";
-//Styles
-import "../styles/main.scss";
+import Link from "next/link";
+import Image from "next/image";
 
 const Div = styled.div`
   margin-top: 12%;
 `;
 
-const Image = styled(Img)`
+const Img = styled(Image)`
   height: 500px;
   margin-left: 10%;
 
@@ -102,61 +100,59 @@ const Underline = styled.u`
 `;
 
 const Extra = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      extra: allDatoCmsExtra {
-        edges {
-          node {
-            titulo
-            descripcion
-            imagen {
-              fluid {
-                ...GatsbyDatoCmsFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     extra: allDatoCmsExtra {
+  //       edges {
+  //         node {
+  //           titulo
+  //           descripcion
+  //           imagen {
+  //             fluid {
+  //               ...GatsbyDatoCmsFluid
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
 
   return (
     <Div className="columns is-half-desktop">
-      {data.extra.edges.map(({ node: element }) => (
-        <>
-          <Image
+      <Div>
+        {/* <Image
             className="column is-3-desktop is-offset-2-desktop is-4-tablet is-10-mobile is-offset-1-mobile"
             fluid={element.imagen.fluid}
             alt="Shoes"
-          />
-          <Elements className="column is-8-desktop">
-            <Container className="columns is-7-desktop is-4-tablet is-10-mobile is-offset-1-mobile">
-              <Title className="column is-12-desktop is-10-tablet is-10-mobile is-offset-1-mobile">
-                {element.titulo}
-              </Title>
-            </Container>
-            <Container className="columns is-3-desktop is-5-tablet">
-              <Content className="column is-6-desktop is-8-tablet is-10-mobile is-offset-1-mobile">
-                {element.descripcion}
-              </Content>
-            </Container>
-            <Container className="columns is-3-desktop">
-              <Element className="column is-6-desktop is-8-tablet is-10-mobile is-offset-1-mobile">
-                <Link to="/brands/">
-                  <Underline>Ver Catálogo Completo</Underline>
-                </Link>
-              </Element>
-            </Container>
-            <Container className="columns is-3-desktop">
-              <Element className="column is-6-desktop is-8-tablet is-10-mobile is-offset-1-mobile">
-                <Link to="/brands/">
-                  <Underline>Artículos de Temporada</Underline>
-                </Link>
-              </Element>
-            </Container>
-          </Elements>
-        </>
-      ))}
+          /> */}
+        <Elements className="column is-8-desktop">
+          <Container className="columns is-7-desktop is-4-tablet is-10-mobile is-offset-1-mobile">
+            <Title className="column is-12-desktop is-10-tablet is-10-mobile is-offset-1-mobile">
+              Un gran título
+            </Title>
+          </Container>
+          <Container className="columns is-3-desktop is-5-tablet">
+            <Content className="column is-6-desktop is-8-tablet is-10-mobile is-offset-1-mobile">
+              Una super descripción de prueba
+            </Content>
+          </Container>
+          <Container className="columns is-3-desktop">
+            <Element className="column is-6-desktop is-8-tablet is-10-mobile is-offset-1-mobile">
+              <Link href="/brands/">
+                <Underline>Ver Catálogo Completo</Underline>
+              </Link>
+            </Element>
+          </Container>
+          <Container className="columns is-3-desktop">
+            <Element className="column is-6-desktop is-8-tablet is-10-mobile is-offset-1-mobile">
+              <Link href="/brands/">
+                <Underline>Artículos de Temporada</Underline>
+              </Link>
+            </Element>
+          </Container>
+        </Elements>
+      </Div>
     </Div>
   );
 };

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
-//Styles
-import "../styles/main.scss";
+import Image from "next/image";
 
 const BoxContainer = styled.div`
   margin-top: 10rem;
@@ -17,7 +16,7 @@ const Box = styled.div`
   color: #fff;
 `;
 
-const ImgOne = styled(Img)`
+const ImgOne = styled(Image)`
   height: 24rem;
 
   @media (min-width: 769px) {
@@ -114,41 +113,37 @@ const Categories = () => {
   return (
     <div>
       <BoxContainer className="columns is-2-offset-desktop is-half-tablet">
-        {data.categorias.edges.map(({ node: element }) => (
-          <>
-            <Box className="column is-4-desktop is-5-tablet is-10-mobile is-offset-1-mobile">
-              <Link to="/store-men/">
-                <Title className="column is-4-desktop is-5-tablet is-10-mobile">
-                  <span>Calzado </span>para <span>Caballero</span>
-                </Title>
-                <Desc className="column is-4-desktop is-5-tablet is-10-mobile">
-                  Suspendisse tempus nibh vel <br />
-                  erat lacinia interdum.
-                </Desc>
-                <ImgOne fluid={element.izquierda.fluid} alt="Men Category" />
-              </Link>
-            </Box>
-            <Box className="column is-4-desktop is-5-tablet is-10-mobile is-offset-1-mobile">
-              <Link to="/store-women/">
-                <Title className="column is-4-desktop is-5-tablet is-10-mobile">
-                  <span>Calzado </span>para <span>Dama</span>
-                </Title>
-                <Desc className="column is-4-desktop is-5-tablet is-10-mobile">
-                  Suspendisse tempus nibh vel <br /> erat lacinia interdum.
-                </Desc>
-                <ImgTwo fluid={element.derecha.fluid} alt="Women Category" />
-              </Link>
-            </Box>
-          </>
-        ))}
+        <>
+          <Box className="column is-4-desktop is-5-tablet is-10-mobile is-offset-1-mobile">
+            <Link href="/store-men/">
+              <Title className="column is-4-desktop is-5-tablet is-10-mobile">
+                <span>Calzado </span>para <span>Caballero</span>
+              </Title>
+              <Desc className="column is-4-desktop is-5-tablet is-10-mobile">
+                Suspendisse tempus nibh vel <br />
+                erat lacinia interdum.
+              </Desc>
+              {/* <ImgOne fluid={element.izquierda.fluid} alt="Men Category" /> */}
+            </Link>
+          </Box>
+          <Box className="column is-4-desktop is-5-tablet is-10-mobile is-offset-1-mobile">
+            <Link href="/store-women/">
+              <Title className="column is-4-desktop is-5-tablet is-10-mobile">
+                <span>Calzado </span>para <span>Dama</span>
+              </Title>
+              <Desc className="column is-4-desktop is-5-tablet is-10-mobile">
+                Suspendisse tempus nibh vel <br /> erat lacinia interdum.
+              </Desc>
+              {/* <ImgTwo fluid={element.derecha.fluid} alt="Women Category" /> */}
+            </Link>
+          </Box>
+        </>
       </BoxContainer>
 
       <TextContainer className="columns is-5-desktop">
-        {data.categorias.edges.map(({ node: element }) => (
-          <Text className="column is-5-desktop is-5-tablet is-10-mobile is-offset-1-mobile">
-            “{element.frase}”
-          </Text>
-        ))}
+        <Text className="column is-5-desktop is-5-tablet is-10-mobile is-offset-1-mobile">
+          “Una frase”
+        </Text>
       </TextContainer>
       <Bar />
     </div>
