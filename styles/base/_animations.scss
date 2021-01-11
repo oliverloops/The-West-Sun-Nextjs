@@ -1,0 +1,56 @@
+// Navbar appearing animation
+@keyframes links {
+  0% {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  33% {
+    transform: translateX(-45px);
+    opacity: 0.25;
+  }
+  66% {
+    transform: translateX(-30px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(-15px);
+    opacity: 0.75;
+  }
+}
+
+// Home page animations
+@keyframes appear {
+  0% {
+    transform: translateY(70px);
+    opacity: 0;
+  }
+  33% {
+    transform: translateY(50px);
+    opacity: 0.25;
+  }
+
+  66% {
+    transform: translateY(30px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(10px);
+    opacity: 0.75;
+  }
+}
+
+@keyframes logo {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0.25;
+  }
+
+  66% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.75;
+  }
+}

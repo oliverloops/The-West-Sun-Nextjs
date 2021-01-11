@@ -1,0 +1,18 @@
+//Sticky header component
+.sticky {
+  position: sticky;
+  top: 0;
+
+  & .sticky-inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+}
+
+.sticky-wrapper {
+  position: relative;
+  height: 6rem; //96px
+}

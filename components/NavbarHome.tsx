@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar.jsx";
-//Redux
-import store from "../store";
-import { Provider } from "react-redux";
+
 //Styles
 import "../styles/main.scss";
 
@@ -28,10 +26,12 @@ const Bar = styled.div`
 
 const NavbarHome = () => {
   return (
-    <Provider store={store}>
+    // <Provider store={store}>
+    <>
       <Navbar />
       <Bar />
-    </Provider>
+    </>
+    // </Provider>
   );
 };
 

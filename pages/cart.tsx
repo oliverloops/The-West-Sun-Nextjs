@@ -8,6 +8,95 @@ import Metadata from "../components/Metadata.jsx";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 
+//Begin of new relocated styles
+const H1 = styled.h1`
+  @media (min-width: 300px) and (max-width: 768px) {
+    textalign: center;
+  }
+
+  @media (min-width: 769px) and (max-width: 1023px) {
+    fontsize: 2.15rem;
+  }
+`;
+
+const ListContainer = styled.div`
+  @media (min-width: 769px) and (max-width: 1023px) {
+    font-size: 1rem;
+  }
+`;
+
+const AnImage = styled.img`
+  @media (min-width: 300px) and (max-width: 768px) {
+    height: 10rem;
+    width: 15.65rem;
+  }
+`;
+
+const Paragraph = styled.p`
+  @media (min-width: 300px) and (max-width: 768px) {
+    font-size: 1.65rem;
+  }
+`;
+
+const AnotherDiv2 = styled.div`
+  @media (min-width: 769px) and (max-width: 1023px) {
+    font-size: 1rem;
+  }
+`;
+
+const AnImage2 = styled.img`
+  @media (min-width: 300px) and (max-width: 768px) {
+    height: 10rem;
+    width: 15.65rem;
+  }
+`;
+
+const Paragraph2 = styled.p`
+  @media (min-width: 300px) and (max-width: 768px) {
+    font-size: 1.65rem;
+  }
+`;
+
+const AnotherH1 = styled.h1`
+  @media (min-width: 300px) and (max-width: 768px) {
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 1.75rem;
+  }
+
+  @media (min-width: 769px) and (max-width: 1023px) {
+    font-size: 1.25rem;
+  }
+`;
+
+const AnSpan = styled.span`
+  @media (min-width: 300px) and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 769px) and (max-width: 1023px) {
+    font-size: 1rem;
+  }
+`;
+
+const AnSpan2 = styled.span`
+  @media (min-width: 300px) and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 769px) and (max-width: 1023px) {
+    font-size: 1rem;
+  }
+`;
+
+const ALastDiv = styled.div`
+  @media (min-width: 300px) and (max-width: 768px) {
+    margin-top: 1rem;
+  }
+`;
+
+//End of new relocated styles
+
 const Container = styled.hr`
   background-color: rgba(127, 127, 127, 0.6);
   height: 1px;
@@ -60,6 +149,10 @@ const Label = styled.label`
       left: 6px;
       width: 8px;
       height: 8px;
+    }
+
+    @media (min-width: 300px) and (max-width: 768px) {
+      margin-top: -3.5rem;
     }
   }
 
@@ -160,51 +253,40 @@ const Cart = () => {
     setTotal(subtotal);
   }
 
-  function addShipping(price) {
-    removeShipping();
-    setTotal(subtotal + price);
-  }
+  //   function addShipping(price) {
+  //     removeShipping();
+  //     setTotal(subtotal + price);
+  //   }
 
   return (
     <div>
       <div className="columns">
-        <h1
+        <H1
           className="column is-12-desktop is-offset-1-desktop
                         is-12-tablet is-offset-1-tablet
                         is-12-mobile 
                     "
-          css={`
-            margin-top: 8rem;
-            font-family: "Courier Prime", monospace;
-            font-weight: 700;
-            font-size: 2.5rem;
-            color: rgb(142, 45, 34);
-
-            @media (min-width: 300px) and (max-width: 768px) {
-              text-align: center;
-            }
-
-            @media (min-width: 769px) and (max-width: 1023px) {
-              font-size: 2.15rem;
-            }
-          `}
+          style={{
+            marginTop: "8rem",
+            fontFamily: "Courier Prime, monospace",
+            fontWeight: "bold",
+            fontSize: "2.5rem",
+            color: "rgb(142, 45, 34)",
+          }}
         >
           Carrito
-        </h1>
+        </H1>
       </div>
       <Container />
       {/* Begin of List Container */}
-      <div
-        css={`
-          align-items: center;
-          font-size: 1.2rem;
-          font-family: "Kameron", serif;
-          font-weight: 700;
-          color: #000;
-          @media (min-width: 769px) and (max-width: 1023px) {
-            font-size: 1rem;
-          }
-        `}
+      <ListContainer
+        style={{
+          alignItems: "center",
+          fontSize: "1.2rem",
+          fontFamily: "Kameron, serif",
+          fontWeight: "bold",
+          color: "#000",
+        }}
         className="columns"
       >
         <span
@@ -213,58 +295,46 @@ const Cart = () => {
                     is-8-mobile is-offset-2-mobile
                 "
         >
-          <img
-            css={`
-              height: 6.5rem;
-              width: 10.5rem;
-
-              @media (min-width: 300px) and (max-width: 768px) {
-                height: 10rem;
-                width: 15.65rem;
-              }
-            `}
+          <AnImage
+            style={{
+              height: "6.5rem",
+              width: "10.5rem",
+            }}
             src={require("../images/shoes_3.jpeg")}
             alt="item"
           />
         </span>
-        <span className="column" css="text-align: center;">
+        <span className="column" style={{ textAlign: "center" }}>
           <p>Berlín Vaqueta</p>
         </span>
-        <span className="column" css="text-align: center;">
-          <p css="color: rgb(142, 45, 34);">$1290.00 MXN</p>
+        <span className="column" style={{ textAlign: "center" }}>
+          <p style={{ color: "rgb(142, 45, 34)" }}>$1290.00 MXN</p>
         </span>
-        <span className="column" css="text-align: center;">
+        <span className="column" style={{ textAlign: "center" }}>
           <p>2</p>
         </span>
-        <span className="column is-3-desktop" css="text-align: center;">
-          <p
-            css={`
-              color: red;
-              cursor: pointer;
-
-              @media (min-width: 300px) and (max-width: 768px) {
-                font-size: 1.65rem;
-              }
-            `}
+        <span className="column is-3-desktop" style={{ textAlign: "center" }}>
+          <Paragraph
+            style={{
+              color: " red",
+              cursor: "pointer",
+            }}
           >
             X
-          </p>
+          </Paragraph>
         </span>
-      </div>
+      </ListContainer>
       <Container />
       {/* End of List Container */}
       {/* Begin of List Container */}
-      <div
-        css={`
-          align-items: center;
-          font-size: 1.2rem;
-          font-family: "Kameron", serif;
-          font-weight: 700;
-          color: #000;
-          @media (min-width: 769px) and (max-width: 1023px) {
-            font-size: 1rem;
-          }
-        `}
+      <AnotherDiv2
+        style={{
+          alignItems: "center",
+          fontSize: "1.2rem",
+          fontFamily: "Kameron, serif",
+          fontWeight: "bold",
+          color: "#000",
+        }}
         className="columns"
       >
         <span
@@ -273,72 +343,53 @@ const Cart = () => {
                     is-8-mobile is-offset-2-mobile
                 "
         >
-          <img
-            css={`
-              height: 6.5rem;
-              width: 10.5rem;
-
-              @media (min-width: 300px) and (max-width: 768px) {
-                height: 10rem;
-                width: 15.65rem;
-              }
-            `}
+          <AnImage2
+            style={{
+              height: "6.5rem",
+              width: "10.5rem",
+            }}
             src={require("../images/shoes_7.jpeg")}
             alt="item"
           />
         </span>
-        <span className="column" css="text-align: center;">
+        <span className="column" style={{ textAlign: "center" }}>
           <p>Milán Vaqueta</p>
         </span>
-        <span className="column" css="text-align: center;">
-          <p css="color: rgb(142, 45, 34);">$1270.00 MXN</p>
+        <span className="column" style={{ textAlign: "center" }}>
+          <p style={{ color: "rgb(142, 45, 34)" }}>$1270.00 MXN</p>
         </span>
-        <span className="column" css="text-align: center;">
+        <span className="column" style={{ textAlign: "center" }}>
           <p>1</p>
         </span>
-        <span className="column is-3-desktop" css="text-align: center;">
-          <p
-            css={`
-              color: red;
-              cursor: pointer;
-
-              @media (min-width: 300px) and (max-width: 768px) {
-                font-size: 1.65rem;
-              }
-            `}
+        <span className="column is-3-desktop" style={{ textAlign: "center" }}>
+          <Paragraph2
+            style={{
+              color: "red",
+              cursor: "pointer",
+            }}
           >
             X
-          </p>
+          </Paragraph2>
         </span>
-      </div>
+      </AnotherDiv2>
       <Container />
       {/* End of List Container */}
       <div className="columns">
-        <h1
+        <AnotherH1
           className="column is-12-desktop is-offset-1-desktop
                         is-12-tablet is-offset-1-tablet
                         is-10-mobile is-offset-1-mobile
                     "
-          css={`
-            margin-top: 1rem;
-            font-family: "Courier Prime", monospace;
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: rgb(142, 45, 34);
-
-            @media (min-width: 300px) and (max-width: 768px) {
-              text-align: center;
-              margin-top: 5rem;
-              font-size: 1.75rem;
-            }
-
-            @media (min-width: 769px) and (max-width: 1023px) {
-              font-size: 1.25rem;
-            }
-          `}
+          style={{
+            marginTop: "1rem",
+            fontFamily: "Courier Prime, monospace",
+            fontWeight: "bold",
+            fontSize: "1.5rem",
+            color: "rgb(142, 45, 34)",
+          }}
         >
           Total del Carrito
-        </h1>
+        </AnotherH1>
       </div>
       <div className="columns">
         <span
@@ -346,26 +397,18 @@ const Cart = () => {
                     is-6-tablet is-offset-1-tablet"
         >
           <hr
-            css={`
-              background-color: rgba(127, 127, 127, 0.6);
-              height: 1px;
-            `}
+            style={{
+              backgroundColor: "rgba(127, 127, 127, 0.6)",
+              height: "1px",
+            }}
           />
           <span
-            css={`
-              color: #000;
-              font-size: 1.25rem;
-              font-family: "Kameron", serif;
-              font-weight: 700;
-
-              @media (min-width: 300px) and (max-width: 768px) {
-                font-size: 1.5rem;
-              }
-
-              @media (min-width: 769px) and (max-width: 1023px) {
-                font-size: 1rem;
-              }
-            `}
+            style={{
+              color: "#000",
+              fontSize: "1.25rem",
+              fontFamily: "Kameron, serif",
+              fontWeight: "bold",
+            }}
             className="columns is-mobile"
           >
             <p
@@ -376,31 +419,23 @@ const Cart = () => {
             >
               Subtotal:
             </p>
-            <p css="color: rgb(142, 45, 34);" className="column">
+            <p style={{ color: "rgb(142, 45, 34)" }} className="column">
               ${subtotal}.00 MXN
             </p>
           </span>
           <hr
-            css={`
-              background-color: rgba(127, 127, 127, 0.6);
-              height: 1px;
-            `}
+            style={{
+              backgroundColor: "rgba(127, 127, 127, 0.6)",
+              height: "1px",
+            }}
           />
-          <span
-            css={`
-              color: #000;
-              font-size: 1.25rem;
-              font-family: "Kameron", serif;
-              font-weight: 700;
-
-              @media (min-width: 300px) and (max-width: 768px) {
-                font-size: 1.5rem;
-              }
-
-              @media (min-width: 769px) and (max-width: 1023px) {
-                font-size: 1rem;
-              }
-            `}
+          <AnSpan
+            style={{
+              color: "#000",
+              fontSize: "1.25rem",
+              fontFamily: "Kameron, serif",
+              fontWeight: "bold",
+            }}
             className="columns"
           >
             <p
@@ -413,51 +448,38 @@ const Cart = () => {
             </p>
             <Label
               className="column is-6-mobile is-offset-half-mobile"
-              css={`
-                @media (min-width: 300px) and (max-width: 768px) {
-                  margin-top: -3.5rem;
-                }
-              `}
-              onClick={() => {
-                addShipping(base_shipping);
-              }}
+              //   onClick={() => {
+              //     addShipping(base_shipping);
+              //   }}
             >
               ${base_shipping}.00 MXN
-              <input type="radio" checked="checked" name="radio" />
+              <input type="radio" checked={true} name="radio" />
               <Checkmark></Checkmark>
               <p>El envió será de 2 a 3 días hábiles</p>
             </Label>
             <Label
               className="column is-6-mobile is-offset-half-mobile"
-              onClick={() => addShipping(premium_shipping)}
+              //   onClick={() => addShipping(premium_shipping)}
             >
               ${premium_shipping}.00 MXN
               <input type="radio" name="radio" />
               <Checkmark></Checkmark>
               <p>El envió será de 1 día hábil</p>
             </Label>
-          </span>
+          </AnSpan>
           <hr
-            css={`
-              background-color: rgba(127, 127, 127, 0.6);
-              height: 1px;
-            `}
+            style={{
+              backgroundColor: "rgba(127, 127, 127, 0.6)",
+              height: "1px",
+            }}
           />
-          <span
-            css={`
-              color: #000;
-              font-size: 1.25rem;
-              font-family: "Kameron", serif;
-              font-weight: 700;
-
-              @media (min-width: 300px) and (max-width: 768px) {
-                font-size: 1.5rem;
-              }
-
-              @media (min-width: 769px) and (max-width: 1023px) {
-                font-size: 1rem;
-              }
-            `}
+          <AnSpan2
+            style={{
+              color: "#000",
+              fontSize: "1.25rem",
+              fontFamily: "Kameron, serif",
+              fontWeight: "bold",
+            }}
             className="columns is-mobile"
           >
             <p
@@ -469,35 +491,31 @@ const Cart = () => {
               Total:
             </p>
             <p
-              css="color: rgb(142, 45, 34);"
+              style={{ color: "rgb(142, 45, 34)" }}
               className="column is-6-mobile is-offset-2-mobile"
             >
               ${total}.00 MXN
             </p>
-          </span>
+          </AnSpan2>
         </span>
-        <div
-          css={`
-            margin-top: 7rem;
-
-            @media (min-width: 300px) and (max-width: 768px) {
-              margin-top: 1rem;
-            }
-          `}
+        <ALastDiv
+          style={{
+            marginTop: "7rem",
+          }}
           className="column is-4-desktop is-offset-1-desktop
                         is-4-tablet is-offset-1-tablet
                         is-11-mobile is-offset-1-mobile
                 "
         >
           <Button>Confirmar Compra</Button>
-          <div
+          {/* <div
             css={`
               @media (min-width: 300px) and (max-width: 768px) {
                 margin-top: 10rem;
               }
             `}
-          ></div>
-        </div>
+          ></div> */}
+        </ALastDiv>
       </div>
     </div>
   );
@@ -505,12 +523,14 @@ const Cart = () => {
 
 const MyCart = () => {
   return (
-    <Provider store={store}>
+    // <Provider store={store}>
+    <>
       <Metadata />
       <Navbar />
       <Cart />
       <Footer />
-    </Provider>
+    </>
+    // </Provider>
   );
 };
 

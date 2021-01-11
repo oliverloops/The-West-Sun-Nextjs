@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-//Redux
-import store from "../store";
-import { Provider } from "react-redux";
+
 //Styles
 import "../styles/main.scss";
 // Layout
@@ -25,14 +23,14 @@ const View = () => {
       <div className="columns">
         <h1
           className="column"
-          css={`
-            text-align: center;
-            color: #8e2d22;
-            font-family: "Kameron", serif;
-            font-weight: 800;
-            font-size: 1.85rem;
-            margin-top: 8rem;
-          `}
+          style={{
+            textAlign: "center",
+            color: "#8e2d22",
+            fontFamily: "Kameron, serif",
+            fontWeight: "bold",
+            fontSize: "1.85rem",
+            marginTop: "8rem",
+          }}
         >
           Cómo Comprar
         </h1>
@@ -42,14 +40,14 @@ const View = () => {
           className="column is-10-desktop is-offset-1-desktop
             is-10-tablet is-offset-1-tablet
           "
-          css={`
-            text-align: center;
-            color: rgb(42, 72, 137);
-            font-family: "Kameron", serif;
-            font-weight: 800;
-            font-size: 1.15rem;
-            margin-top: 1.65rem;
-          `}
+          style={{
+            textAlign: "center",
+            color: "rgb(42, 72, 137)",
+            fontFamily: "Kameron, serif",
+            fontWeight: "bold",
+            fontSize: "1.15rem",
+            marginTop: "1.65rem",
+          }}
         >
           * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
           purus vitae eros dictum facilisis ut nec mi Nam.
@@ -69,14 +67,14 @@ const View = () => {
           className="column is-10-desktop is-offset-1-desktop
             is-10-tablet is-offset-1-tablet
           "
-          css={`
-            text-align: center;
-            color: rgb(42, 72, 137);
-            font-family: "Kameron", serif;
-            font-weight: 800;
-            font-size: 1.15rem;
-            margin-top: 1.65rem;
-          `}
+          style={{
+            textAlign: "center",
+            color: "rgb(42, 72, 137)",
+            fontFamily: "Kameron, serif",
+            fontWeight: "bold",
+            fontSize: "1.15rem",
+            marginTop: "1.65rem",
+          }}
         >
           * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
           purus vitae eros dictum facilisis ut nec mi Nam.
@@ -96,14 +94,14 @@ const View = () => {
           className="column is-10-desktop is-offset-1-desktop
             is-10-tablet is-offset-1-tablet
           "
-          css={`
-            text-align: center;
-            color: rgb(42, 72, 137);
-            font-family: "Kameron", serif;
-            font-weight: 800;
-            font-size: 1.15rem;
-            margin-top: 1.65rem;
-          `}
+          style={{
+            textAlign: "center",
+            color: "rgb(42, 72, 137)",
+            fontFamily: "Kameron, serif",
+            fontWeight: "bold",
+            fontSize: "1.15rem",
+            marginTop: "1.65rem",
+          }}
         >
           * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
           purus vitae eros dictum facilisis ut nec mi Nam.
@@ -123,14 +121,14 @@ const View = () => {
           className="column is-10-desktop is-offset-1-desktop
             is-10-tablet is-offset-1-tablet
           "
-          css={`
-            text-align: center;
-            color: rgb(42, 72, 137);
-            font-family: "Kameron", serif;
-            font-weight: 800;
-            font-size: 1.15rem;
-            margin-top: 1.65rem;
-          `}
+          style={{
+            textAlign: "center",
+            color: "rgb(42, 72, 137)",
+            fontFamily: "Kameron, serif",
+            fontWeight: "bold",
+            fontSize: "1.15rem",
+            marginTop: "1.65rem",
+          }}
         >
           * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
           purus vitae eros dictum facilisis ut nec mi Nam.
@@ -151,12 +149,14 @@ const View = () => {
 
 const Howto = () => {
   return (
-    <Provider store={store}>
+    // <Provider store={store}>
+    <>
       <Metadata />
       <Navbar />
       <View />
       <Footer />
-    </Provider>
+    </>
+    // </Provider>
   );
 };
 

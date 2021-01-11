@@ -1,11 +1,7 @@
-import React from "react";
 import styled from "styled-components";
-import { Link, useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
-//Redux
-import store from "../store";
-import { Provider } from "react-redux";
-//Styles
+import Link from "next/link";
+import Image from "next/image";
+
 import "../styles/main.scss";
 // Components
 import Metadata from "../components/Metadata.jsx";
@@ -22,7 +18,7 @@ const Element = styled.figure`
   }
 `;
 
-const Image = styled(Img)`
+const Img = styled(Image)`
   height: 205px;
 
   @media (min-width: 300px) and (max-width: 768px) {
@@ -185,12 +181,14 @@ const Store = () => (
 
 // Main Component
 const WomenStore = () => (
-  <Provider store={store}>
+  //   <Provider store={store}>
+  <>
     <Metadata />
     <Navbar />
     <Store />
     <Footer />
-  </Provider>
+  </>
+  //   </Provider>
 );
 
 export default WomenStore;

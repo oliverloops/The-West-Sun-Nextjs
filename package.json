@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@glidejs/glide": "github:glidejs/glide",
     "bulma": "^0.9.1",
     "next": "10.0.5",
     "react": "17.0.1",

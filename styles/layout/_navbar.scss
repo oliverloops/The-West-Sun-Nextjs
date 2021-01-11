@@ -1,0 +1,113 @@
+input[type="checkbox"] {
+  display: none;
+}
+// Navbar Styling
+nav[role="custom-dropdown"] {
+  label {
+    display: none;
+    cursor: pointer;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    list-style: none;
+
+    & > li {
+      padding: 0.65em 0.65em;
+      margin-top: 2rem;
+      width: 20%;
+      float: left;
+
+      & > a {
+        font-family: "Kameron", serif;
+        font-weight: 600;
+        font-size: 1.22rem;
+        list-style: none;
+        text-decoration: none;
+        color: #fff;
+
+        @media screen and(min-width: 769px) and(max-width: 1024px) {
+          font-size: 1.1rem;
+        }
+
+        &:hover {
+          color: rgb(142, 45, 34);
+          transition: 0.25s linear;
+        }
+      }
+    }
+  }
+
+  .cart-mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 44em) {
+  nav[role="custom-dropdown"] {
+    ul {
+      display: none;
+      height: 100%;
+      width: 100%;
+      font-size: 1.5rem;
+      font-weight: 600;
+      font-family: "Kameron", serif;
+    }
+
+    label {
+      position: relative;
+      display: block;
+    }
+
+    label:after {
+      position: absolute;
+      content: "\2261";
+      color: #fff;
+      top: 0;
+      font-size: 3em;
+      right: 0.5em;
+      margin-top: 0.5em;
+    }
+
+    input[type="checkbox"]:checked ~ label:after {
+      content: "\2613";
+      font-size: 2.5em;
+      right: 0.7em;
+      color: #fff;
+      margin-top: 0.825em;
+    }
+
+    input[type="checkbox"]:checked ~ ul {
+      display: block;
+      margin-top: -20px;
+      margin-left: 3%;
+      height: 100%;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.9);
+      position: fixed;
+      overflow-x: hidden;
+      transition: 0.5s;
+
+      > li {
+        width: 100%;
+        text-align: center;
+        margin-top: 12.5%;
+        animation: links 0.225s cubic-bezier(0.54, 0.87, 1, 0.78);
+
+        & > a {
+          font-size: 1em;
+        }
+      }
+    }
+
+    .cart-mobile {
+      display: block;
+    }
+
+    .cart-desktop {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.glide-1 {
+  animation: appear 1s cubic-bezier(0.54, 0.87, 1, 0.78);
+}
+
+.main_title {
+  color: #fff;
+}
+
+@media (min-width: 312px) and (max-width: 768px) {
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .main_desc {
+    margin-top: 165px;
+    margin-left: 7%;
+    font-size: 1.7rem;
+  }
+
+  .main_title {
+    font-size: 2rem;
+    margin-left: 11%;
+  }
+}
