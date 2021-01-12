@@ -36,7 +36,7 @@ const CartSummary = () => {
   };
 
   return (
-    <form onSubmit={handleCheckout}>
+    <form onSubmit={handleCheckout} style={{ marginTop: "10%" }}>
       <h2>Cart summary</h2>
       {/* This is where we'll render our cart */}
       <p suppressHydrationWarning>

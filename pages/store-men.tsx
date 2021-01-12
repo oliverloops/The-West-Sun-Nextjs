@@ -8,6 +8,8 @@ import { useShoppingCart, formatCurrencyString } from "use-shopping-cart";
 
 // Components
 import Metadata from "../components/Metadata";
+import Cart from "../components/Cart";
+import CartSummary from "../components/CartSummary";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -122,49 +124,45 @@ const Adiv = styled.div`
   }
 `;
 
-const Button = () => <StyledButton>Ver Producto</StyledButton>;
-
-const Product = () => {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     productos: allDatoCmsProductoCaballero {
-  //       edges {
-  //         node {
-  //           id
-  //           slug
-  //           title
-  //           price
-  //           image {
-  //             fluid {
-  //               ...GatsbyDatoCmsFluid
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `);
+const Button = ({ product }) => {
+  const { addItem, removeItem } = useShoppingCart();
 
   return (
+    <StyledButton onClick={() => addItem(product)}>Ver Producto</StyledButton>
+  );
+};
+
+const Product = () => {
+  return (
     <Container className="my-flex">
-      <Element className="item column is-3-widescreen is-3-desktop is-3-tablet is-10-mobile is-offset-1-mobile">
-        <Img src={"/shoes_4.jpeg"} width="380" height="250" alt="producto" />
-        <div className="product-meta-info">
-          <div className="columns is-desktop is-tablet is-mobile">
-            <span className="column is-7-widescreen is-6-desktop is-7-tablet is-7-mobile">
-              <Caption>Un título de prueba</Caption>
-              <Price>$ 300 MXN.</Price>
-            </span>
-            <span className="column">
-              <Link href={`/store-men/`}>
-                <a>
-                  <Button />
-                </a>
-              </Link>
-            </span>
+      {products.map((product) => (
+        <Element
+          key={product.sku}
+          className="item column is-3-widescreen is-3-desktop is-3-tablet is-10-mobile is-offset-1-mobile"
+        >
+          <Img src={product.image} width="380" height="250" alt="producto" />
+          <div className="product-meta-info">
+            <div className="columns is-desktop is-tablet is-mobile">
+              <span className="column is-7-widescreen is-6-desktop is-7-tablet is-7-mobile">
+                <Caption>{product.title}</Caption>
+                <Price>
+                  {formatCurrencyString({
+                    value: product.price,
+                    currency: product.currency,
+                  })}
+                </Price>
+              </span>
+              <span className="column">
+                <Link href={`/store-men/`}>
+                  <a>
+                    <Button product={product} />
+                  </a>
+                </Link>
+              </span>
+            </div>
           </div>
-        </div>
-      </Element>
+        </Element>
+      ))}
     </Container>
   );
 };
@@ -172,7 +170,10 @@ const Product = () => {
 const Store = () => (
   <Adiv className="columns">
     <div className="column is-12-desktop is-offset-1-desktop">
-      <Product />
+      <Cart>
+        <CartSummary />
+        <Product />
+      </Cart>
     </div>
   </Adiv>
 );

@@ -240,7 +240,7 @@ const Button = styled.button`
   }
 `;
 
-const Cart = () => {
+const CartView = () => {
   const subtotal = 2570,
     base_shipping = 130,
     premium_shipping = 210;
@@ -523,7 +523,7 @@ const MyCart = () => {
     <>
       <Metadata />
       <Navbar />
-      <Cart />
+      <CartView />
       <Footer />
     </>
   );
