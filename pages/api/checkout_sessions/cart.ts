@@ -12,6 +12,7 @@ import { validateCartItems } from "use-shopping-cart/src/serverUtil";
 import inventory from "../../../data/products.json";
 
 import Stripe from "stripe";
+import { Product } from "use-shopping-cart";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   // https://github.com/stripe/stripe-node#configuration
   apiVersion: "2020-08-27",
@@ -25,7 +26,7 @@ export default async function handler(
     try {
       // Validate the cart details that were sent from the client.
       const cartItems = req.body;
-      const line_items = validateCartItems(inventory, cartItems);
+      const line_items = validateCartItems(<Product[]>inventory, cartItems);
       // Create Checkout Sessions from body params.
       const params: Stripe.Checkout.SessionCreateParams = {
         submit_type: "pay",
@@ -36,7 +37,7 @@ export default async function handler(
         },
         line_items,
         success_url: `${req.headers.origin}/result?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${req.headers.origin}/use-shopping-cart`,
+        cancel_url: `${req.headers.origin}/store-men`,
       };
       const checkoutSession: Stripe.Checkout.Session = await stripe.checkout.sessions.create(
         params
